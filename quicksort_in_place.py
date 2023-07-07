@@ -51,7 +51,7 @@ def quicksort_in_place(arr):
 	sorting(0, len(arr)-1)
 	return arr
 
-
+print('poop')
 
 testArr = [2,1,4,3,6,8]
 quicksort_in_place(testArr)
