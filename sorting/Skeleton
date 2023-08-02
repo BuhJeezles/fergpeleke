@@ -1,0 +1,202 @@
+'''
+BaseSorter.py
+'''
+
+import logging
+
+
+'''
+BaseSorter provides an abstract interface for sorting algorithms.
+Functions are NOT implemented, and will log errors if called.
+'''
+class BaseSorter:
+  
+  '''
+  Abstract function representing a sort operation on a List of integers.
+  Duplicate entries are allowed in the input, and will be handled properly.
+  
+  Args:
+  	my_list: List[int] of integers, to be sorted in-place.
+  
+  Returns:
+  	None
+  	Li
+	def Sort(my_list):
+    # alternatively (and better),  raise NotImplementedError
+    logging.error("BaseSorter.Sort() called directly")
+    return
+  
+
+	'''
+	Abstract function representing a validation of whether or not the given list
+	is sorted. Empty lists are considered sorted, and ordering of duplicates is
+	irrelevant. The input list will NOT be modified by this function.
+	
+	Args:
+	  my_list: List[int] of integers, to be validated as sorted or not.
+	
+	Returns:
+	  bool: True if my_list is sorted, False if my_list is not sorted.
+	  No
+	'''
+  def IsSorted(my_list):
+    logging.error("BaseSorter.IsSorted() called directly")
+    return
+  
+  
+  
+################################################################################  
+#
+# PRETEND EVERYTHING BELOW THIS IS A DIFFERENT FILE
+#
+################################################################################  
+'''
+MergeSorter.py
+
+''
+
+import BaseSorter		# I think this is how we import things?
+
+
+'''
+MergeSorter implements the BaseSorter interface class using a recursive
+implementation of the mergesort algorithm.
+
+''
+class MergeSorter(BaseSorter):
+  
+  '''
+  Implements recursive mergesort not-in-place on the provided list of ints.
+  Abstract function representing a sort operation on a List of integers.
+  
+  
+  Args:
+  	my_list: List[int] of integers, to be sorted in-place.
+  
+  Returns:
+  	None
+  '''
+  def Sort(my_list):
+    # Will writes code here
+    
+    
+  '''
+  Uses mergesort to validate whether or not the given list is sorted.
+  Abstract function representing an "is this list sorted?" query on a list.
+  Em
+  The input list will NOT be modified by this function.
+  
+  Args:
+  	my_list: const List[int] of integers, to be validated as sorted or not.
+  
+  Returns:
+  	bool: True if my_list is sorted, False if my_list is not sorted.
+  '''
+  def IsSorted(my_list):
+    # Will writes code here
+  
+ 
+
+################################################################################  
+#
+# PRETEND EVERYTHING BELOW THIS IS A DIFFERENT FILE
+#
+################################################################################  
+'''
+QuickSorter.py
+'''
+
+import random				# probably the right import for getting a random number?
+
+import BaseSorter		# I think this is how we import things?
+
+
+'''
+QuickSorter implements the BaseSorter interface class using an in-place
+implementation  of the quicksort algorithm with random pivots.
+'''
+class QuickSorter(BaseSorter):
+  
+  '''
+  Implements quicksort in-place with random pivots on the provided list of ints.
+  Duplicate entries are allowed in the input, and will be handled properly.
+  
+  Args:
+  	my_list: List[int] of integers, to be sorted in-place.
+  
+  Returns:
+  	None
+  '''
+  def Sort(my_list):
+    # Will writes code here
+    
+    
+  '''
+  Uses quicksort to validate whether or not the given list is sorted.
+  Empty lists are considered sorted, and ordering of duplicates is irrelevant.  
+  The input list will NOT be modified by this function.
+  
+  Args:
+  	my_list: List[int] of integers, to be validated as sorted or not.
+  
+  Returns:
+  	bool: True if my_list is sorted, False if my_list is not sorted.
+  '''
+  def IsSorted(my_list):
+    # Will writes code here
+  
+  
+ 
+################################################################################  
+#
+# PRETEND EVERYTHING BELOW THIS IS A DIFFERENT FILE
+#
+################################################################################  
+'''
+Sorter_test.py
+'''
+
+import logging
+
+import BaseSorter
+import MergeSorter
+import QuickSorter
+
+'''
+Args:
+	base_sorter: An instance of a BaseSorter subclass to be tested
+  test_list: The list to be sorted by the base_sorter instance
+  answer_list: The correctly sorted list
+'''
+def TestSort(base_sorter, test_list, answer_list):
+  ans = base_sorter.Sort(test_list)
+  if not ans == answer_list:	# IDK if python does this equality correctly
+    logging.error("Incorrect sort,", ans, "!=", answer_list)
+    
+def TestIsSorted(base_sorter, test_list, answer_bool):
+  # Will does things here
+    
+   
+def __main__():
+  myMergeSorter = MergeSorter()
+  myQuickSorter = QuickSorter()
+  
+  print("Testing MergeSorter")
+  TestSort(myMergeSorter, [], [])
+  TestSort(myMergeSorter, [1], [1])
+  TestSort(myMergeSorter, [1,2,3,4], [1,2,3,4])
+  TestSort(myMergeSorter, [3,2,4,1], [1,2,3,4])
+  TestSort(myMergeSorter, [1,1,1,1], [1,1,1,1])
+  TestSort(myMergeSorter, [1,4,1,1], [1,1,1,4])
+  
+  print("Testing QuickSorter")
+  TestSort(myQuickSorter, [], [])
+  TestSort(myQuickSorter, [1], [1])
+  TestSort(myQuickSorter, [1,2,3,4], [1,2,3,4])
+  TestSort(myQuickSorter, [3,2,4,1], [1,2,3,4])
+  TestSort(myQuickSorter, [1,1,1,1], [1,1,1,1])
+  TestSort(myQuickSorter, [1,4,1,1], [1,1,1,4])
+  
+  # Will adds more test cases, and also tests IsSorted.
+  # Will also writes additional subclasses BubbleSorter and SelectionSorter
+  # and tests those too.
