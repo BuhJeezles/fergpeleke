@@ -8,7 +8,7 @@ class BaseSorter:
 	Functions are NOT implemented, and will log errors if called.
 	'''
 
-	def __init__(self, inputList):
+	def __init__(self, my_list):
 	  '''
 	  Abstract function representing a sort operation on a List of integers.
 	  Duplicate entries are allowed in the input, and will be handled properly.
@@ -20,7 +20,7 @@ class BaseSorter:
 	  	None
 	  	Li
 	  '''
-		self.inputList = inputList
+		self.my_list = my_list
 
   '''
   Abstract function representing a sort operation on a List of integers.
@@ -32,7 +32,7 @@ class BaseSorter:
   Returns:
   	None
   	'''
-	def sort(self, inputList):
+	def sort(self, my_list):
 		raise Exception("BaseSorter.sort() cannot be called directly!!!!!")
 
 
@@ -48,7 +48,7 @@ class BaseSorter:
 	  bool: True if my_list is sorted, False if my_list is not sorted.
 	  No
 	'''
-	def isSorted(self, inputList):
-		if self.inputList == sorted(self.inputList):
+	def isSorted(self, my_list):
+		if self.my_list == sorted(self.my_list):
 			return True
 		return False
