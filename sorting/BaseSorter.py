@@ -9,17 +9,16 @@ class BaseSorter:
 	'''
 
 	def __init__(self, my_list):
-	  '''
-	  Abstract function representing a sort operation on a List of integers.
-	  Duplicate entries are allowed in the input, and will be handled properly.
-	  
-	  Args:
-	  	my_list: List[int] of integers, to be sorted in-place.
-	  
-	  Returns:
-	  	None
-	  	Li
-	  '''
+	'''
+		Abstract function representing a sort operation on a List of integers.
+		Duplicate entries are allowed in the input, and will be handled properly.
+		  
+		Args:
+		  	my_list: List[int] of integers, to be sorted in-place.
+		  
+		Returns:
+			None
+	'''
 		self.my_list = my_list
 
   '''
@@ -32,7 +31,7 @@ class BaseSorter:
   Returns:
   	None
   	'''
-	def sort(self, my_list):
+	def sort(self, self.my_list):
 		raise Exception("BaseSorter.sort() cannot be called directly!!!!!")
 
 
