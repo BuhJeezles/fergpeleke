@@ -17,7 +17,7 @@ class MergeSorter(BaseSorter):
 		None
 	'''
 
-	def sort(my_list):
+	def Sort(my_list):
 		midpoint = listLen // 2
 
 		# recurse until we have len == 1

@@ -31,8 +31,8 @@ class BaseSorter:
 	Returns:
 		None
 	'''
-	def sort(self, my_list):
-		raise Exception("BaseSorter.sort() cannot be called directly!!!!!")
+	def Sort(self, my_list):
+		raise Exception("BaseSorter.Sort() cannot be called directly!!!!!")
 
 
 	'''
